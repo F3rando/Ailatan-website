@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #030303;
+  --bg-surface: #0a0a0a;
+  --bg-elevated: #141414;
+  --line-color: rgba(255, 255, 255, 0.15);
+  --transition-slow: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-base);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-brand {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+  }
+}
+
+.ironwork-tile {
+  animation: rotateTile 60s linear infinite;
+  transform-origin: 100px 100px;
+}
+
+.iron-scroll {
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.grid-drift {
+  animation: drift 40s ease-in-out infinite alternate;
+}
+
+@keyframes rotateTile {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.08;
+  }
+  100% {
+    opacity: 0.22;
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  100% {
+    transform: translate(-30px, -20px) scale(1.04);
+  }
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom-color: #ffffff;
+}
+
+.masonry-grid {
+  columns: 1;
+  column-gap: 1px;
+  background-color: var(--line-color);
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    columns: 3;
+  }
+}
+
+.filter-btn.active {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
