@@ -2,12 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ailatan | Custom Iron Doors</title>
+    <script>
+      ;(() => {
+        const params = new URLSearchParams(window.location.search)
+        const p = params.get('p')
+        if (!p) return
+        const base = '%BASE_URL%'
+        const next = base.replace(/\/?$/, '/') + p.replace(/^\//, '')
+        window.history.replaceState(null, '', next)
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="%BASE_URL%src/main.tsx"></script>
   </body>
 </html>
