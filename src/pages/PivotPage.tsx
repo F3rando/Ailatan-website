@@ -3,6 +3,7 @@ import { GalleryItemCard, type GalleryItem } from '../components/GalleryItemCard
 import { PageHero } from '../components/PageHero'
 
 const PIVOT_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/pivot-cover.jpg`
+const PIVOT_01_SRC = `${import.meta.env.BASE_URL}images/doors/pivot-01.jpg`
 
 const coverItem: GalleryItem = {
   id: 'pivot-cover',
@@ -15,45 +16,10 @@ const coverItem: GalleryItem = {
 const items: GalleryItem[] = [
   {
     id: 'axis-001',
-    imageSrc: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop',
+    imageSrc: PIVOT_01_SRC,
     alt: 'Pivot Door',
     kicker: 'Pivot — Minimal',
     title: 'Axis Series 001',
-  },
-  {
-    id: 'lux-002',
-    imageSrc: 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=800&auto=format&fit=crop',
-    alt: 'Pivot Door',
-    kicker: 'Pivot — Full Glass',
-    title: 'Lux Series 002',
-  },
-  {
-    id: 'forge-003',
-    imageSrc: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop',
-    alt: 'Pivot Door',
-    kicker: 'Pivot — Iron Frame',
-    title: 'Forge Series 003',
-  },
-  {
-    id: 'monument-004',
-    imageSrc: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop',
-    alt: 'Pivot Door',
-    kicker: 'Pivot — Oversized',
-    title: 'Monument Series 004',
-  },
-  {
-    id: 'crown-005',
-    imageSrc: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop',
-    alt: 'Pivot Door',
-    kicker: 'Pivot — Arched Top',
-    title: 'Crown Series 005',
-  },
-  {
-    id: 'grid-006',
-    imageSrc: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800&auto=format&fit=crop',
-    alt: 'Pivot Door',
-    kicker: 'Pivot — Steel Grid',
-    title: 'Grid Series 006',
   },
 ]
 

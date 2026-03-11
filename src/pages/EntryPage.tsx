@@ -4,6 +4,12 @@ import { GalleryItemCard, type GalleryItem } from '../components/GalleryItemCard
 import { PageHero } from '../components/PageHero'
 
 const ENTRY_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/entry-cover.jpg`
+const ENTRY_01_SRC = `${import.meta.env.BASE_URL}images/doors/entry-01.jpg`
+const ENTRY_02_SRC = `${import.meta.env.BASE_URL}images/doors/entry-02.jpg`
+const ENTRY_03_SRC = `${import.meta.env.BASE_URL}images/doors/entry-03.jpg`
+const ENTRY_04_SRC = `${import.meta.env.BASE_URL}images/doors/entry-04.jpg`
+const ENTRY_05_SRC = `${import.meta.env.BASE_URL}images/doors/entry-05.jpg`
+const ENTRY_06_SRC = `${import.meta.env.BASE_URL}images/doors/entry-06.jpg`
 
 const filters = [
   { id: 'all', label: 'All' },
@@ -17,84 +23,61 @@ type FilterId = (typeof filters)[number]['id']
 
 const coverItem: GalleryItem = {
   id: 'entry-cover',
+  category: 'single',
   imageSrc: ENTRY_COVER_SRC,
   alt: 'Entry door cover',
-  kicker: 'Entry — Cover',
+  kicker: 'Single — Cover',
   title: 'Entry Doors',
 }
 
 const items: GalleryItem[] = [
   {
     id: 'estate-001',
-    category: 'double',
-    imageSrc: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Double — Glass Panel',
-    title: 'Estate Series 001',
+    category: 'single',
+    imageSrc: ENTRY_01_SRC,
+    alt: 'Entry door',
+    kicker: 'Single',
+    title: 'Entry 01',
   },
   {
     id: 'monolith-002',
-    category: 'single',
-    imageSrc: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Single — Solid Panel',
-    title: 'Monolith Series 002',
+    category: 'double',
+    imageSrc: ENTRY_02_SRC,
+    alt: 'Entry door',
+    kicker: 'Double',
+    title: 'Entry 02',
   },
   {
     id: 'arch-003',
-    category: 'arch',
-    imageSrc: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Arched — Ironwork Detail',
-    title: 'Arch Series 003',
-  },
-  {
-    id: 'lumiere-004',
-    category: 'glass',
-    imageSrc: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Single — Full Glass',
-    title: 'Lumière Series 004',
-  },
-  {
-    id: 'grand-005',
     category: 'double',
-    imageSrc: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Double — Sidelights',
-    title: 'Grand Series 005',
+    imageSrc: ENTRY_03_SRC,
+    alt: 'Entry door',
+    kicker: 'Double',
+    title: 'Entry 03',
   },
   {
-    id: 'cathedral-006',
-    category: 'arch',
-    imageSrc: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Arched — Sidelights',
-    title: 'Cathedral Series 006',
-  },
-  {
-    id: 'noir-007',
+    id: 'entry-004',
     category: 'single',
-    imageSrc: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Single — Minimalist',
-    title: 'Noir Series 007',
+    imageSrc: ENTRY_04_SRC,
+    alt: 'Entry door',
+    kicker: 'Single',
+    title: 'Entry 04',
   },
   {
-    id: 'pane-008',
-    category: 'glass',
-    imageSrc: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Double — Glass Grid',
-    title: 'Pane Series 008',
-  },
-  {
-    id: 'heritage-009',
+    id: 'entry-005',
     category: 'double',
-    imageSrc: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop',
-    alt: 'Door',
-    kicker: 'Double — Transitional',
-    title: 'Heritage Series 009',
+    imageSrc: ENTRY_05_SRC,
+    alt: 'Entry door',
+    kicker: 'Double',
+    title: 'Entry 05',
+  },
+  {
+    id: 'entry-006',
+    category: 'single',
+    imageSrc: ENTRY_06_SRC,
+    alt: 'Entry door',
+    kicker: 'Single',
+    title: 'Entry 06',
   },
 ]
 
@@ -138,7 +121,7 @@ export function EntryPage() {
 
       <div className="py-12 px-[4vw] pb-24 bg-base">
         <div className="masonry-grid">
-          <GalleryItemCard {...coverItem} />
+          {(active === 'all' || active === coverItem.category || active === 'arch') && <GalleryItemCard {...coverItem} />}
           {filtered.map((item) => (
             <GalleryItemCard key={item.id} {...item} />
           ))}

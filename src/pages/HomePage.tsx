@@ -224,25 +224,22 @@ export function HomePage() {
         </div>
       </section>
 
-      <footer className="border-t border-line py-16 px-[4vw] flex flex-col items-center gap-8">
+      <footer className="border-t border-line py-16 md:py-20 px-[4vw] flex flex-col items-center gap-10">
         <div className="font-brand text-3xl tracking-[0.1em]">AILATAN</div>
         <div className="text-[0.65rem] uppercase tracking-[0.25em] text-secondary">Bespoke Ironworks</div>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-[4vw] text-center w-full justify-center">
-          <div className="flex flex-col gap-1">
-            <div className="text-[0.65rem] uppercase tracking-[0.25em] text-primary">Los Angeles</div>
-            <span className="text-[0.65rem] uppercase tracking-[0.25em] text-[#555]">01 310 555 0198</span>
-          </div>
-          <div className="flex flex-col gap-1">
-            <div className="text-[0.65rem] uppercase tracking-[0.25em] text-primary">New York</div>
-            <span className="text-[0.65rem] uppercase tracking-[0.25em] text-[#555]">01 212 555 0144</span>
-          </div>
-          <div className="flex flex-col gap-1">
-            <div className="text-[0.65rem] uppercase tracking-[0.25em] text-primary">London</div>
-            <span className="text-[0.65rem] uppercase tracking-[0.25em] text-[#555]">44 20 7946 0958</span>
-          </div>
-          <div className="flex flex-col gap-1">
-            <div className="text-[0.65rem] uppercase tracking-[0.25em] text-primary">Dubai</div>
-            <span className="text-[0.65rem] uppercase tracking-[0.25em] text-[#555]">971 4 339 8333</span>
+        <div className="w-full max-w-3xl text-center border-t border-line pt-10">
+          <div className="mx-auto max-w-2xl px-6 md:px-8 py-8 md:py-10 bg-black/30 border border-line-subtle relative z-10 isolate">
+            <div className="text-[0.65rem] uppercase tracking-[0.25em] mb-4" style={{ color: '#ffffff' }}>
+              Our Mission
+            </div>
+            <p
+              className="text-[0.9rem] md:text-base leading-relaxed tracking-[0.03em]"
+              style={{ color: 'rgba(255,255,255,0.85)' }}
+            >
+            Family-built and forged with purpose — for 25+ years, we’ve crafted iron doors that balance strength and
+            refinement. Every project is shaped by precise workmanship, clear communication, and a finish we’re proud to
+            stand behind.
+            </p>
           </div>
         </div>
       </footer>
