@@ -163,6 +163,8 @@ export function HomePage() {
               }
             }}
           >
+            <input type="hidden" name="_subject" value="Ailatan — New Consultation Request" />
+            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
             <div className="mb-8 relative">
               <input
                 name="name"
