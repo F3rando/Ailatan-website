@@ -11,6 +11,7 @@ const ENTRY_04_SRC = `${import.meta.env.BASE_URL}images/doors/entry-04.jpg`
 const ENTRY_05_SRC = `${import.meta.env.BASE_URL}images/doors/entry-05.jpg`
 const ENTRY_06_SRC = `${import.meta.env.BASE_URL}images/doors/entry-06.jpg`
 const ENTRY_07_SRC = `${import.meta.env.BASE_URL}images/doors/entry-07-d-arch.jpeg`
+const ENTRY_08_SRC = `${import.meta.env.BASE_URL}images/doors/backdoor-01.jpeg`
 
 const filters = [
   { id: 'all', label: 'All' },
@@ -95,6 +96,14 @@ const items: GalleryItem[] = [
     alt: 'Double arched entry door',
     kicker: 'Double — Arched',
     title: 'Entry 07',
+  },
+  {
+    id: 'entry-008',
+    category: 'single',
+    imageSrc: ENTRY_08_SRC,
+    alt: 'Single glass panel entry door',
+    kicker: 'Single',
+    title: 'Entry 08',
   },
 ]
 
