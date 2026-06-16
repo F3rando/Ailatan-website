@@ -6,6 +6,7 @@ const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT
 const LOGO_SRC = `${import.meta.env.BASE_URL}ailatan-logo.png`
 const ENTRY_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/entry-cover.jpg`
 const PIVOT_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/pivot-cover.jpg`
+const BIFOLD_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/bifolddoor-cover.png`
 
 export function HomePage() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -54,10 +55,16 @@ export function HomePage() {
           />
           <CollectionCard
             to="/bifold"
-            imageSrc="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=2000&auto=format&fit=crop"
-            imageAlt="Iron Bifold Doors"
+            imageSrc={BIFOLD_COVER_SRC}
+            imageAlt="Iron bifold door design concept"
             seriesLabel="Series 03"
             title="Bifold Systems"
+            imageClassName="w-full h-full object-contain object-center grayscale brightness-50 transition-[transform,filter] duration-[0.8s] ease-slow scale-100 group-hover:scale-[1.02] group-hover:grayscale-[40%] group-hover:brightness-75 group-hover:contrast-125"
+            footer={
+              <div className="text-[0.6rem] uppercase tracking-[0.18em] text-secondary/90 mt-1 opacity-100">
+                Design Concept · Made to Order
+              </div>
+            }
           />
         </div>
       </section>

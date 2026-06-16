@@ -4,17 +4,20 @@ type PageHeroProps = {
   seriesLabel: string
   title: string
   description: string
+  imageClassName?: string
 }
 
-export function PageHero({ imageSrc, imageAlt, seriesLabel, title, description }: PageHeroProps) {
+export function PageHero({
+  imageSrc,
+  imageAlt,
+  seriesLabel,
+  title,
+  description,
+  imageClassName = 'absolute inset-0 w-full h-full object-cover grayscale-[60%] brightness-[0.45]',
+}: PageHeroProps) {
   return (
-    <div className="relative h-[55vh] overflow-hidden flex items-end py-16 px-[4vw]">
-      <img
-        src={imageSrc}
-        className="absolute inset-0 w-full h-full object-cover grayscale-[60%] brightness-[0.45]"
-        alt={imageAlt}
-        loading="eager"
-      />
+    <div className="relative h-[55vh] overflow-hidden flex items-end py-16 px-[4vw] bg-black">
+      <img src={imageSrc} className={imageClassName} alt={imageAlt} loading="eager" />
       <div className="absolute inset-0 bg-gradient-to-t from-base/95 to-base/15" />
       <div className="relative z-10 max-w-3xl">
         <div className="text-[0.65rem] uppercase tracking-[0.25em] text-secondary mb-3">{seriesLabel}</div>

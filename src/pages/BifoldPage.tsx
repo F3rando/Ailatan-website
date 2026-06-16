@@ -1,65 +1,55 @@
 import { Link } from 'react-router-dom'
-import { GalleryItemCard, type GalleryItem } from '../components/GalleryItemCard'
 import { PageHero } from '../components/PageHero'
 
-const items: GalleryItem[] = [
-  {
-    id: 'open-001',
-    imageSrc: 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=800&auto=format&fit=crop',
-    alt: 'Bifold Door',
-    kicker: 'Bifold — 4 Panel',
-    title: 'Open Series 001',
-  },
-  {
-    id: 'horizon-002',
-    imageSrc: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop',
-    alt: 'Bifold Door',
-    kicker: 'Bifold — 6 Panel',
-    title: 'Horizon Series 002',
-  },
-  {
-    id: 'zenith-003',
-    imageSrc: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop',
-    alt: 'Bifold Door',
-    kicker: 'Bifold — Floor to Ceiling',
-    title: 'Zenith Series 003',
-  },
-  {
-    id: 'corner-004',
-    imageSrc: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop',
-    alt: 'Bifold Door',
-    kicker: 'Bifold — Corner System',
-    title: 'Corner Series 004',
-  },
-  {
-    id: 'aqua-005',
-    imageSrc: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
-    alt: 'Bifold Door',
-    kicker: 'Bifold — Pool Surround',
-    title: 'Aqua Series 005',
-  },
-  {
-    id: 'trade-006',
-    imageSrc: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800&auto=format&fit=crop',
-    alt: 'Bifold Door',
-    kicker: 'Bifold — Commercial',
-    title: 'Trade Series 006',
-  },
-]
+const BIFOLD_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/bifolddoor-cover.png`
+
+// Gallery — restore when bifold project photos are ready.
+// import { GalleryItemCard, type GalleryItem } from '../components/GalleryItemCard'
+//
+// const items: GalleryItem[] = [
+//   {
+//     id: 'open-001',
+//     imageSrc: `${import.meta.env.BASE_URL}images/doors/bifold-01.jpg`,
+//     alt: 'Bifold door',
+//     kicker: 'Bifold — 4 Panel',
+//     title: 'Open Series 001',
+//   },
+//   // Add more items here…
+// ]
 
 export function BifoldPage() {
   return (
     <div className="w-full pt-24">
       <PageHero
-        imageSrc="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=2400&auto=format&fit=crop"
-        imageAlt="Bifold Doors Hero"
-        seriesLabel="Series 03"
+        imageSrc={BIFOLD_COVER_SRC}
+        imageAlt="Iron bifold door design concept"
+        seriesLabel="Series 03 · Design Concept"
         title="Bifold Systems"
-        description="Seamless indoor-outdoor transitions — iron bifold systems engineered for grand openings."
+        description="Custom iron bifold systems — engineered, fabricated, and installed by our team."
+        imageClassName="absolute inset-0 w-full h-full object-contain object-center grayscale-[60%] brightness-[0.45]"
       />
 
-      <div className="py-16 px-[4vw] pb-24 bg-base">
-        <div className="masonry-grid">
+      <div className="py-20 px-[4vw] pb-24 bg-base">
+        <div className="mx-auto max-w-2xl text-center border border-line-subtle bg-black/20 px-8 py-12 md:px-12 md:py-16">
+          <div className="text-[0.65rem] uppercase tracking-[0.25em] text-secondary mb-4">Made to Order</div>
+          <h2 className="font-brand text-3xl md:text-4xl tracking-[0.06em] leading-tight mb-6">
+            Portfolio photography coming soon
+          </h2>
+          <p className="text-[0.9rem] text-secondary leading-relaxed tracking-[0.03em] mb-10">
+            We build and install iron bifold systems for residential and commercial projects. Finished project
+            photos are on the way — the image above is a design concept showing the level of craft we deliver.
+            Contact us to discuss dimensions, configuration, and installation for your space.
+          </p>
+          <Link
+            to="/#contact"
+            className="inline-block bg-transparent border border-primary text-primary py-4 px-12 text-[0.7rem] uppercase tracking-[0.2em] transition-all hover:bg-primary hover:text-base cursor-pointer"
+          >
+            Speak With Sales
+          </Link>
+        </div>
+
+        {/* Gallery — uncomment when bifold project photos are ready.
+        <div className="masonry-grid mt-20">
           {items.map((item) => (
             <GalleryItemCard key={item.id} {...item} />
           ))}
@@ -75,8 +65,8 @@ export function BifoldPage() {
             Request a Consultation
           </Link>
         </div>
+        */}
       </div>
     </div>
   )
 }
-
