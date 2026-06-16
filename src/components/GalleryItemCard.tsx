@@ -5,6 +5,7 @@ export type GalleryItem = {
   kicker: string
   title: string
   category?: string
+  tags?: string[]
 }
 
 export function GalleryItemCard({ imageSrc, alt, kicker, title }: GalleryItem) {

@@ -10,6 +10,7 @@ const ENTRY_03_SRC = `${import.meta.env.BASE_URL}images/doors/entry-03.jpg`
 const ENTRY_04_SRC = `${import.meta.env.BASE_URL}images/doors/entry-04.jpg`
 const ENTRY_05_SRC = `${import.meta.env.BASE_URL}images/doors/entry-05.jpg`
 const ENTRY_06_SRC = `${import.meta.env.BASE_URL}images/doors/entry-06.jpg`
+const ENTRY_07_SRC = `${import.meta.env.BASE_URL}images/doors/entry-07-d-arch.jpeg`
 
 const filters = [
   { id: 'all', label: 'All' },
@@ -21,9 +22,16 @@ const filters = [
 
 type FilterId = (typeof filters)[number]['id']
 
+function itemMatchesFilter(item: GalleryItem, filterId: FilterId) {
+  if (filterId === 'all') return true
+  if (item.category === filterId) return true
+  return item.tags?.includes(filterId) ?? false
+}
+
 const coverItem: GalleryItem = {
   id: 'entry-cover',
   category: 'single',
+  tags: ['arch'],
   imageSrc: ENTRY_COVER_SRC,
   alt: 'Entry door cover',
   kicker: 'Single — Cover',
@@ -79,6 +87,15 @@ const items: GalleryItem[] = [
     kicker: 'Single',
     title: 'Entry 06',
   },
+  {
+    id: 'entry-007',
+    category: 'double',
+    tags: ['arch'],
+    imageSrc: ENTRY_07_SRC,
+    alt: 'Double arched entry door',
+    kicker: 'Double — Arched',
+    title: 'Entry 07',
+  },
 ]
 
 export function EntryPage() {
@@ -86,7 +103,7 @@ export function EntryPage() {
 
   const filtered = useMemo(() => {
     if (active === 'all') return items
-    return items.filter((i) => i.category === active)
+    return items.filter((i) => itemMatchesFilter(i, active))
   }, [active])
 
   return (
@@ -121,7 +138,7 @@ export function EntryPage() {
 
       <div className="py-12 px-[4vw] pb-24 bg-base">
         <div className="masonry-grid">
-          {(active === 'all' || active === coverItem.category || active === 'arch') && <GalleryItemCard {...coverItem} />}
+          {itemMatchesFilter(coverItem, active) && <GalleryItemCard {...coverItem} />}
           {filtered.map((item) => (
             <GalleryItemCard key={item.id} {...item} />
           ))}
