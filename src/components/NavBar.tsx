@@ -1,6 +1,8 @@
 import { useCallback } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
+const LOGO_SRC = `${import.meta.env.BASE_URL}ailatan-logo.png`
+
 export function NavBar() {
   const navigate = useNavigate()
   const location = useLocation()
@@ -14,12 +16,13 @@ export function NavBar() {
   }, [location.pathname, navigate])
 
   return (
-    <nav className="fixed top-0 left-0 w-full h-20 flex justify-between items-center px-[4vw] z-50 border-b border-line bg-base/80 backdrop-blur-md">
-      <Link
-        to="/"
-        className="font-brand text-2xl tracking-[0.1em] text-primary hover:opacity-80 transition-opacity uppercase"
-      >
-        Ailatan
+    <nav className="fixed top-0 left-0 w-full h-24 flex justify-between items-center px-[4vw] z-50 border-b border-line bg-base/80 backdrop-blur-md">
+      <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+        <img
+          src={LOGO_SRC}
+          alt="Ailatan"
+          className="h-20 w-auto object-contain"
+        />
       </Link>
       <div className="hidden md:flex gap-[3vw]">
         <Link

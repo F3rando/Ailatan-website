@@ -3,6 +3,7 @@ import { CollectionCard } from '../components/CollectionCard'
 import { IronHeroBackground } from '../components/IronHeroBackground'
 
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT
+const LOGO_SRC = `${import.meta.env.BASE_URL}ailatan-logo.png`
 const ENTRY_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/entry-cover.jpg`
 const PIVOT_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/pivot-cover.jpg`
 
@@ -227,7 +228,7 @@ export function HomePage() {
       </section>
 
       <footer className="border-t border-line py-16 md:py-20 px-[4vw] flex flex-col items-center gap-10">
-        <div className="font-brand text-3xl tracking-[0.1em]">AILATAN</div>
+        <img src={LOGO_SRC} alt="Ailatan" className="h-28 md:h-32 w-auto object-contain" />
         <div className="text-[0.65rem] uppercase tracking-[0.25em] text-secondary">Bespoke Ironworks</div>
         <div className="w-full max-w-3xl text-center border-t border-line pt-10">
           <div className="mx-auto max-w-2xl px-6 md:px-8 py-8 md:py-10 bg-black/30 border border-line-subtle relative z-10 isolate">

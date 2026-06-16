@@ -90,7 +90,7 @@ export function EntryPage() {
   }, [active])
 
   return (
-    <div className="w-full pt-20">
+    <div className="w-full pt-24">
       <PageHero
         imageSrc={ENTRY_COVER_SRC}
         imageAlt="Entry doors cover"
@@ -99,7 +99,7 @@ export function EntryPage() {
         description="Each entry door is handcrafted to order — designed to command presence and endure generations."
       />
 
-      <div className="border-b border-line py-6 px-[4vw] flex flex-wrap gap-8 items-center bg-base sticky top-20 z-40">
+      <div className="border-b border-line py-6 px-[4vw] flex flex-wrap gap-8 items-center bg-base sticky top-24 z-40">
         <span className="text-[0.65rem] uppercase tracking-[0.25em] text-secondary">Filter:</span>
         {filters.map((f) => {
           const isActive = active === f.id

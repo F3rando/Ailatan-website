@@ -25,7 +25,7 @@ const items: GalleryItem[] = [
 
 export function PivotPage() {
   return (
-    <div className="w-full pt-20">
+    <div className="w-full pt-24">
       <PageHero
         imageSrc={PIVOT_COVER_SRC}
         imageAlt="Pivot doors cover"

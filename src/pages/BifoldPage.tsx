@@ -49,7 +49,7 @@ const items: GalleryItem[] = [
 
 export function BifoldPage() {
   return (
-    <div className="w-full pt-20">
+    <div className="w-full pt-24">
       <PageHero
         imageSrc="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=2400&auto=format&fit=crop"
         imageAlt="Bifold Doors Hero"
