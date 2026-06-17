@@ -5,6 +5,7 @@ import { PageHero } from '../components/PageHero'
 const PIVOT_COVER_SRC = `${import.meta.env.BASE_URL}images/doors/pivot-cover.jpg`
 const PIVOT_01_SRC = `${import.meta.env.BASE_URL}images/doors/pivot-01.jpg`
 const PIVOT_02_SRC = `${import.meta.env.BASE_URL}images/doors/pivot-02.jpeg`
+const PIVOT_03_SRC = `${import.meta.env.BASE_URL}images/doors/pivot-03.jpeg`
 
 const coverItem: GalleryItem = {
   id: 'pivot-cover',
@@ -28,6 +29,13 @@ const items: GalleryItem[] = [
     alt: 'Pivot door',
     kicker: 'Pivot',
     title: 'Pivot 02',
+  },
+  {
+    id: 'axis-003',
+    imageSrc: PIVOT_03_SRC,
+    alt: 'Pivot door',
+    kicker: 'Pivot',
+    title: 'Pivot 03',
   },
 ]
 
